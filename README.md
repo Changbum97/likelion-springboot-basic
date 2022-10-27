@@ -1,5 +1,5 @@
 # 멋쟁이 사자처럼 Spring Boot (2022/10/26 ~ )
-
+<br/><br/>
 ## Day 1 (10/26 수)
 - Spring Boot Project 생성 및 서버 실행
 - GetController 생성 후 @RestController 적용
@@ -23,7 +23,7 @@
 - @RequestBody 를 사용해 HTTP Request Body 값 받기
 - Request Body를 DTO로 받기
 - ResponseEntity를 사용해 Response return
-  <br/><br/>
+<br/><br/>
 - 요약
   1. @RequestParam
   2. @PostMapping
