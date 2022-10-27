@@ -20,6 +20,8 @@
 - URL의 Query Parameter 받아서 출력 실습
   - @RequestParam
 - @PathVariable, @RequestParam 동시 적용 실습
+- Map(Key, Value)으로 Query Parameter 받기
+- DTO로 Query Parameter 받기
 
 - 오늘 배운 어노테이션 정리
   1. @RequestParam

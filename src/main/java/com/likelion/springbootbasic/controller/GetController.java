@@ -7,7 +7,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/get-api")
-public class HelloController {
+public class GetController {
 
     // @RequestMapping(value = "/hello", method = RequestMethod.GET)
     @GetMapping("/hello")
@@ -28,9 +28,9 @@ public class HelloController {
     }
 
     // Path Variable, Query Parameter 같이 써보기
-    @GetMapping("/both-param/{id}")
-    public String getBothParam(@PathVariable String id, @RequestParam int age) {
-        return "ID : " + id + "\nQuery Param : " + age;
+    @GetMapping("/both-param/{name}")
+    public String getBothParam(@PathVariable String name, @RequestParam int age) {
+        return "Name : " + name + "\nAge : " + age;
     }
 
     // Map으로 Request Param 받기
@@ -42,6 +42,7 @@ public class HelloController {
         return "request-map 호출 완료";
     }
 
+    // DTO를 통해 Query Parameter 받기
     @GetMapping("/request-dto")
     public String getRequestDto(MemberDto memberDto) {
         return memberDto.toString();
