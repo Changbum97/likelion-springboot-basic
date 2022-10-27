@@ -23,6 +23,7 @@
 - @RequestBody 를 사용해 HTTP Request Body 값 받기
 - Request Body를 DTO로 받기
 - ResponseEntity를 사용해 Response return
+- Swagger 3.0 적용
 <br/><br/>
 - 요약
   1. @RequestParam
