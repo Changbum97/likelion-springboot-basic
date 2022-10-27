@@ -1,5 +1,5 @@
 # 멋쟁이 사자처럼 Spring Boot (2022/10/26 ~ )
-<br/><br/>
+<br/>
 ## Day 1 (10/26 수)
 - Spring Boot Project 생성 및 서버 실행
 - GetController 생성 후 @RestController 적용
