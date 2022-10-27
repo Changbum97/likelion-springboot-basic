@@ -1,5 +1,6 @@
 package com.likelion.springbootbasic.controller;
 
+import com.likelion.springbootbasic.domain.dto.MemberDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -27,9 +28,9 @@ public class HelloController {
     }
 
     // Path Variable, Query Parameter 같이 써보기
-    @GetMapping("/both-param/{v1}")
-    public String getBothParam(@PathVariable int v1, @RequestParam int v2) {
-        return "Path Variable : " + v1 + "\nQuery Param : " + v2;
+    @GetMapping("/both-param/{id}")
+    public String getBothParam(@PathVariable String id, @RequestParam int age) {
+        return "ID : " + id + "\nQuery Param : " + age;
     }
 
     // Map으로 Request Param 받기
@@ -39,5 +40,10 @@ public class HelloController {
             System.out.printf("Key : %s,  Value : %s\n", p.getKey(), p.getValue());
         });
         return "request-map 호출 완료";
+    }
+
+    @GetMapping("/request-dto")
+    public String getRequestDto(MemberDto memberDto) {
+        return memberDto.toString();
     }
 }
