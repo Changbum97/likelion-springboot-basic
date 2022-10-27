@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/get-api")
 public class HelloController {
 
-    // @RequestMapping(value = "/hello", method = RequestMethod.GET) 와 같이 사용 가능
+    // @RequestMapping(value = "/hello", method = RequestMethod.GET)
     @GetMapping("/hello")
     public String hello() {
         return "Hello World";
