@@ -22,8 +22,8 @@ public class HelloController {
 
     // Query Parameter 실습
     @GetMapping("/query-param")
-    public String getQueryParam(@RequestParam String name, @RequestParam String email, @RequestParam String organization) {
-        return "Name : " + name + "\nEmail : " + email + "\nOranization : " + organization;
+    public String getQueryParam(@RequestParam String name, @RequestParam int age) {
+        return "Name : " + name + "\nAge : " + age;
     }
 
     // Path Variable, Query Parameter 같이 써보기
@@ -35,8 +35,8 @@ public class HelloController {
     // Map으로 Request Param 받기
     @GetMapping("/request-map")
     public String getRequestMap(@RequestParam Map<String, String> param) {
-        param.entrySet().forEach((map)-> {
-            System.out.printf("Key : %s,  Value : %s\n", map.getKey(), map.getValue());
+        param.entrySet().forEach((p)-> {
+            System.out.printf("Key : %s,  Value : %s\n", p.getKey(), p.getValue());
         });
         return "request-map 호출 완료";
     }
