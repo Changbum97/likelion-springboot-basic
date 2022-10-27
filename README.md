@@ -7,8 +7,8 @@
 - URL Mapping 실습
   - @RequestMapping, @GetMapping 등 사용 가능
 - @PathVariable 을 사용해 URL의 Path Variable 받아서 출력
-
-- 오늘 배운 어노테이션 정리
+<br/><br/>
+- 요약
   1. @RestController
   2. @RequestMapping
   3. @GetMapping
@@ -18,12 +18,15 @@
 - @RequestParam 을 사용해 URL의 Query Parameter 받아서 출력
 - @PathVariable, @RequestParam 같이 적용 
 - Map(Key, Value)으로 Query Parameter 받기
-- MemberDto 생성 후 DTO로 Query Parameter 받기  
+- MemberDto 생성 후 DTO로 Query Parameter 받기
 - @PostMapping 을 사용해 HTTP POST 요청 받기
 - @RequestBody 를 사용해 HTTP Request Body 값 받기
 - Request Body를 DTO로 받기
-
-- 오늘 배운 어노테이션 정리
+- ResponseEntity를 사용해 Response return
+  <br/><br/>
+- 요약
   1. @RequestParam
   2. @PostMapping
   3. @RequestBody
+  4. @PutMapping
+  5. ResponseEntity
