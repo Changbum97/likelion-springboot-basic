@@ -2,6 +2,8 @@ package com.likelion.springbootbasic.controller;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/api/v1/get-api")
 public class HelloController {
@@ -30,4 +32,12 @@ public class HelloController {
         return "Path Variable : " + v1 + "\nQuery Param : " + v2;
     }
 
+    // Map으로 Request Param 받기
+    @GetMapping("/request-map")
+    public String getRequestMap(@RequestParam Map<String, String> param) {
+        param.entrySet().forEach((map)-> {
+            System.out.printf("Key : %s,  Value : %s\n", map.getKey(), map.getValue());
+        });
+        return "request-map 호출 완료";
+    }
 }
