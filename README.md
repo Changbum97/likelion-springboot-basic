@@ -2,13 +2,11 @@
 
 ## Day 1 (10/26 수)
 - Spring Boot Project 생성 및 서버 실행
-- GetController 생성
-  - @RestController 적용
+- GetController 생성 후 @RestController 적용
 - Talend API Tester(크롬 확장프로그램) 사용해 테스트 진행
 - URL Mapping 실습
   - @RequestMapping, @GetMapping 등 사용 가능
-- URL의 Path Variable 받아서 출력 실습
-  - @PathVariable
+- @PathVariable 을 사용해 URL의 Path Variable 받아서 출력
 
 - 오늘 배운 어노테이션 정리
   1. @RestController
@@ -17,11 +15,10 @@
   4. @PathVariable
 
 ## Day 2 (10/27 목)
-- URL의 Query Parameter 받아서 출력 실습
-  - @RequestParam
-- @PathVariable, @RequestParam 동시 적용 실습
+- @RequestParam 을 사용해 URL의 Query Parameter 받아서 출력
+- @PathVariable, @RequestParam 같이 적용 
 - Map(Key, Value)으로 Query Parameter 받기
-- MemberDto 생성 후 DTO로 Query Parameter 받기
+- MemberDto 생성 후 DTO로 Query Parameter 받기  
 - @PostMapping 을 사용해 HTTP POST 요청 받기
 - @RequestBody 를 사용해 HTTP Request Body 값 받기
 - Request Body를 DTO로 받기
