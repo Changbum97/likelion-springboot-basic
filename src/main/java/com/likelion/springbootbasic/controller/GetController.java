@@ -35,7 +35,7 @@ public class GetController {
 
     // Map으로 Request Param 받기
     @GetMapping("/request-map")
-    public String getRequestMap(@RequestParam Map<String, String> param) {
+    public String getRequestMap(@RequestParam Map<String, Object> param) {
         param.entrySet().forEach((p)-> {
             System.out.printf("Key : %s,  Value : %s\n", p.getKey(), p.getValue());
         });
