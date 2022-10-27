@@ -13,7 +13,7 @@
   2. @RequestMapping
   3. @GetMapping
   4. @PathVariable
-
+<br/><br/>
 ## Day 2 (10/27 목)
 - @RequestParam 을 사용해 URL의 Query Parameter 받아서 출력
 - @PathVariable, @RequestParam 같이 적용 
@@ -30,3 +30,4 @@
   3. @RequestBody
   4. @PutMapping
   5. ResponseEntity
+<br/><br/>
