@@ -11,11 +11,13 @@ import java.util.Map;
 @RequestMapping("/api/v1/put-api")
 public class PutController {
 
+    // Put API
     @PutMapping("/domain")
     public String putExample() {
         return "Hello Put API";
     }
 
+    //
     @PutMapping("/member")
     public ResponseEntity<MemberDto> putMember(@RequestBody MemberDto memberDto) {
         return ResponseEntity

@@ -10,11 +10,13 @@ import java.util.Objects;
 @RequestMapping("/api/v1/post-api")
 public class PostController {
 
+    // Post API
     @PostMapping("/domain")
     public String postExample() {
         return "Hello Post API";
     }
 
+    // Request Body로 넘어온 데이터를 Map으로 받기
     @PostMapping("/member")
     public String postMember(@RequestBody Map<String, Object> postData) {
         StringBuilder sb = new StringBuilder();
@@ -22,6 +24,7 @@ public class PostController {
         return sb.toString();
     }
 
+    // Request Body로 넘어온 데이터를 Dto로 받기
     @PostMapping("/member-dto")
     public String postMemberDto(@RequestBody MemberDto memberDto) {
         return memberDto.toString();
