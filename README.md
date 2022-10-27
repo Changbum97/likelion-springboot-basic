@@ -22,9 +22,11 @@
 - @PathVariable, @RequestParam 동시 적용 실습
 - Map(Key, Value)으로 Query Parameter 받기
 - MemberDto 생성 후 DTO로 Query Parameter 받기
-- @PostMapping을 통해 HTTP POST 요청 받아보기 및 테스트
-- 
+- @PostMapping 을 사용해 HTTP POST 요청 받기
+- @RequestBody 를 사용해 HTTP Request Body 값 받기
+- Request Body를 DTO로 받기
 
 - 오늘 배운 어노테이션 정리
   1. @RequestParam
   2. @PostMapping
+  3. @RequestBody
