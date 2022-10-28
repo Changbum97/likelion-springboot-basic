@@ -1,4 +1,4 @@
-package com.likelion.springbootbasic.dao;
+package com.likelion.springbootbasic.domain.dao;
 
 import com.likelion.springbootbasic.domain.User;
 import org.springframework.jdbc.core.JdbcTemplate;
