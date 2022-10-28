@@ -9,11 +9,9 @@ import javax.sql.DataSource;
 @Repository
 public class UserDao {
 
-    private final DataSource dataSource;
     private final JdbcTemplate jdbcTemplate;
 
-    public UserDao(DataSource dataSource, JdbcTemplate jdbcTemplate) {
-        this.dataSource = dataSource;
+    public UserDao(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
