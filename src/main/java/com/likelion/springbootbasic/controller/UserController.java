@@ -3,6 +3,7 @@ package com.likelion.springbootbasic.controller;
 import com.likelion.springbootbasic.domain.dao.UserDao;
 import com.likelion.springbootbasic.domain.User;
 import com.likelion.springbootbasic.domain.dto.UserRequestDto;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,11 +13,8 @@ import java.util.List;
 @RequestMapping("/api/v1")
 public class UserController {
 
-    private final UserDao userDao;
-
-    public UserController(UserDao userDao) {
-        this.userDao = userDao;
-    }
+    @Autowired
+    private UserDao userDao;
 
     @GetMapping("/")
     public String hello() {
