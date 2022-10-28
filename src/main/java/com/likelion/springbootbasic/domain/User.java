@@ -1,5 +1,8 @@
 package com.likelion.springbootbasic.domain;
 
+import lombok.Getter;
+
+@Getter
 public class User {
 
     private String id;
@@ -12,15 +15,4 @@ public class User {
         this.password = password;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
 }
