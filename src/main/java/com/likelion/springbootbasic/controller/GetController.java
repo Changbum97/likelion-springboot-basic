@@ -28,6 +28,7 @@ public class GetController {
     // Query Parameter 실습
     @GetMapping("/query-param")
     public String getQueryParam(@RequestParam String name, @RequestParam int age) {
+        log.info("name : {}, age : {}", name, age);
         return "Name : " + name + "\nAge : " + age;
     }
 
