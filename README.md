@@ -39,7 +39,26 @@
 ## Day3 (10/28 금)
 - Controller에 @Slf4j 어노테이션 추가
 - log.info를 통해 로그 출력 가능
+- 전에 작성했던 [UserDao](https://github.com/Changbum97/Toby-Spring3-Test/blob/master/src/main/java/UserExercise/dao/UserDao_Final.java)를 활용한 CRUD 기능 개발
+  1. JdbcTemplate을 활용해 DB와 연결했던 UserDao 불러오기
+  2. MySql 연결을 위한 라이브러리 추가
+     - spring-boot-starter-jdbc (2.7.5)
+     - mysql-connector-java (8.0.30)
+  3. application.yml을 통해 DB connection 설정
+     - 비밀번호는 환경변수를 통해 설정
+  4. User 객체 생성
+     - @Getter, @AllArgsConstructor 적용
+  5. Request Body를 통해 User을 받음
+     - UserRequestDao 생성
+  6. UserController 생성
+  7. @Autowired를 사용해 UserDao를 주입 받음
+  8. URL Mapping과 UserDao의 기능을 사용해 CRUD 구현
+     - add, deleteAll, findById, findAll, getCount 기능
 <br/><br/>
 - 요약
   1. @Slf4j
   2. log.info
+  3. application.yml, 환경변수를 통한 DB connection 설정
+  4. @Getter, @Setter
+  5. @AllArgsConstructor
+  6. @Autowired
