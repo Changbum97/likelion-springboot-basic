@@ -24,6 +24,10 @@
 - Request Body를 DTO로 받기
 - ResponseEntity를 사용해 Response return
 - Swagger 3.0 적용
+  - springfox-boot-starter(3.0.0) 라이브러리 추가
+  - springfox-swagger-ui(3.0.0) 라이브러리 추가 
+  - application.yml 수정
+  - http://localhost:8080/swagger-ui/
 <br/><br/>
 - 요약
   1. @RequestParam
