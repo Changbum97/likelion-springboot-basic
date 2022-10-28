@@ -2,11 +2,9 @@ package com.likelion.springbootbasic.controller;
 
 import com.likelion.springbootbasic.dao.UserDao;
 import com.likelion.springbootbasic.domain.User;
+import com.likelion.springbootbasic.domain.dto.UserRequestDto;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -24,11 +22,12 @@ public class UserController {
     }
 
     @PostMapping("/user")
-    public void add() {
-        User user = new User("1", "Changbum", "1234");
+    public void add(@RequestBody UserRequestDto userRequestDto) {
+        User user = new User(userRequestDto.getId(), userRequestDto.getName(), userRequestDto.getPassword());
         userDao.add(user);
     }
 
+    @DeleteMapping("/user")
     public ResponseEntity<Integer> deleteAll() {
         return ResponseEntity
                 .ok()
