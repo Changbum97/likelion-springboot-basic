@@ -32,3 +32,10 @@
   4. @PutMapping
   5. ResponseEntity
 <br/><br/>
+## Day3 (10/28 금)
+- Controller에 @Slf4j 어노테이션 추가
+- log.info를 통해 로그 출력 가능
+<br/><br/>
+- 요약
+  1. @Slf4j
+  2. log.info
