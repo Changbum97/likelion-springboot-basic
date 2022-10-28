@@ -3,13 +3,14 @@ package com.likelion.springbootbasic.dao;
 import com.likelion.springbootbasic.domain.User;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-@Repository
+@Component
 public class UserDao {
 
     private final JdbcTemplate jdbcTemplate;
