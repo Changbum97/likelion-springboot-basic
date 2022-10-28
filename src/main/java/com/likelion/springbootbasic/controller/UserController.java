@@ -1,6 +1,6 @@
 package com.likelion.springbootbasic.controller;
 
-import com.likelion.springbootbasic.dao.UserDao;
+import com.likelion.springbootbasic.domain.dao.UserDao;
 import com.likelion.springbootbasic.domain.User;
 import com.likelion.springbootbasic.domain.dto.UserRequestDto;
 import org.springframework.http.ResponseEntity;
@@ -52,7 +52,7 @@ public class UserController {
     }
 
     // 전체 User 수 조회
-    @GetMapping("/user/count")
+    @GetMapping("/userCount")
     public int getCount() {
         return userDao.getCount();
     }
