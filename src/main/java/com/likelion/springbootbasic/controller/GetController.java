@@ -1,10 +1,12 @@
 package com.likelion.springbootbasic.controller;
 
 import com.likelion.springbootbasic.domain.dto.MemberDto;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/v1/get-api")
 public class GetController {
@@ -12,12 +14,14 @@ public class GetController {
     // @RequestMapping(value = "/hello", method = RequestMethod.GET)
     @GetMapping("/hello")
     public String hello() {
+        log.info("hello로 요청이 들어왔습니다.");
         return "Hello World";
     }
 
     // Path Variable 실습
     @GetMapping("/path-variable/{v1}/{v2}")
     public String getPathVariable(@PathVariable int v1, @PathVariable int v2) {
+        log.info("path-variable : {}, {}", v1, v2);
         return "Path Variable : " + (v1 + v2);
     }
 
