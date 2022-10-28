@@ -8,3 +8,5 @@ spring:
     username: root
     password: Environment_variables
 
+# 환경 변수에 SPRING_DATASOURCE_PASSWORD=[비밀번호] 넣어줬음
+
