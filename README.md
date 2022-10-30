@@ -58,7 +58,7 @@
 - 요약
   1. @Slf4j
   2. log.info
-  3. application.yml, 환경변수를 통한 DB connection 설정
-  4. @Getter, @Setter
+  3. application.yml + 환경변수를 통한 DB connection 설정
+  4. @Getter, @Setter, @Data
   5. @AllArgsConstructor
   6. @Autowired
