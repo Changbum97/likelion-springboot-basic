@@ -1,4 +1,4 @@
-package com.likelion.springbootbasic.configuration;
+package com.likelion.springbootbasic.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

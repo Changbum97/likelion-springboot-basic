@@ -1,10 +1,9 @@
-package com.likelion.springbootbasic.domain.dao;
+package com.likelion.springbootbasic.userExercise.domain.dao;
 
-import com.likelion.springbootbasic.domain.User;
+import com.likelion.springbootbasic.userExercise.domain.User;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

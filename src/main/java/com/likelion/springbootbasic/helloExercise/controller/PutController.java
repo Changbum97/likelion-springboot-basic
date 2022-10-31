@@ -1,11 +1,9 @@
-package com.likelion.springbootbasic.controller;
+package com.likelion.springbootbasic.helloExercise.controller;
 
-import com.likelion.springbootbasic.domain.dto.MemberDto;
+import com.likelion.springbootbasic.helloExercise.domain.dto.MemberDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/put-api")

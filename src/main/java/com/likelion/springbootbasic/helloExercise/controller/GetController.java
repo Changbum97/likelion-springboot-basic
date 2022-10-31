@@ -1,6 +1,6 @@
-package com.likelion.springbootbasic.controller;
+package com.likelion.springbootbasic.helloExercise.controller;
 
-import com.likelion.springbootbasic.domain.dto.MemberDto;
+import com.likelion.springbootbasic.helloExercise.domain.dto.MemberDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 

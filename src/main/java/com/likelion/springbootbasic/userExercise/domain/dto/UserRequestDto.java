@@ -1,4 +1,4 @@
-package com.likelion.springbootbasic.domain.dto;
+package com.likelion.springbootbasic.userExercise.domain.dto;
 
 import lombok.Getter;
 

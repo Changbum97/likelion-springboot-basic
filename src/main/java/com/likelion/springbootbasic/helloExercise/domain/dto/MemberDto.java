@@ -1,4 +1,4 @@
-package com.likelion.springbootbasic.domain.dto;
+package com.likelion.springbootbasic.helloExercise.domain.dto;
 
 public class MemberDto {
     private String name;

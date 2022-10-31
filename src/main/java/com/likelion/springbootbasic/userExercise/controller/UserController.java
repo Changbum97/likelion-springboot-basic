@@ -1,8 +1,8 @@
-package com.likelion.springbootbasic.controller;
+package com.likelion.springbootbasic.userExercise.controller;
 
-import com.likelion.springbootbasic.domain.dao.UserDao;
-import com.likelion.springbootbasic.domain.User;
-import com.likelion.springbootbasic.domain.dto.UserRequestDto;
+import com.likelion.springbootbasic.userExercise.domain.dao.UserDao;
+import com.likelion.springbootbasic.userExercise.domain.User;
+import com.likelion.springbootbasic.userExercise.domain.dto.UserRequestDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

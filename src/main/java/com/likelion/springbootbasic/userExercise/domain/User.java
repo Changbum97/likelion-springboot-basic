@@ -1,4 +1,4 @@
-package com.likelion.springbootbasic.domain;
+package com.likelion.springbootbasic.userExercise.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
