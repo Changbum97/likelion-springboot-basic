@@ -2,6 +2,8 @@ package com.likelion.springbootbasic.hospitalExercise.parser;
 
 import com.likelion.springbootbasic.hospitalExercise.domain.Hospital;
 import com.likelion.springbootbasic.hospitalExercise.domain.dao.HospitalDao;
+import com.likelion.springbootbasic.hospitalExercise.parser.HospitalParser;
+import com.likelion.springbootbasic.hospitalExercise.parser.ReadLineContext;
 import com.zaxxer.hikari.util.DriverDataSource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,7 +24,9 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class HospitalParserTest {
 
-    /*
+    /*  Factory 사용
+    ReadLineContext<Hospital> hospitalReadLineContext;
+
     @Autowired
     ApplicationContext context;
 
@@ -32,7 +36,11 @@ class HospitalParserTest {
     }
     */
 
-    @Autowired  // 위에 주석친 코드 대신 이 어노테이션 쓰면 되는데, 이유까지는 잘 모르겠음
+    /*  Factory 미사용
+    ReadLineContext<Hospital> hospitalReadLineContext = new ReadLineContext<Hospital>(new HospitalParser());
+     */
+
+    @Autowired
     ReadLineContext<Hospital> hospitalReadLineContext;
 
     @Test
