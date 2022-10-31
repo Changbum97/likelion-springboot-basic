@@ -33,8 +33,7 @@ class HospitalParserTest {
     @BeforeEach
     void setUp() {
         this.hospitalReadLineContext = context.getBean("hospitalReadLineContext", ReadLineContext.class);
-    }
-    */
+    } */
 
     /*  Factory 미사용
     ReadLineContext<Hospital> hospitalReadLineContext = new ReadLineContext<Hospital>(new HospitalParser());
