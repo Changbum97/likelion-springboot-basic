@@ -5,10 +5,11 @@ import lombok.Getter;
 
 import java.time.LocalDateTime;
 
-@AllArgsConstructor
 @Getter
+@AllArgsConstructor
 public class Hospital {
-    private int id;     // 번호(PK)
+
+    private int id;                         // 번호(PK)
     private String openServiceName;         // 개방 서비스명
     private int openLocalGovernmentCode;    // 개방 자치 단체 코드
     private String managementNumber;        // 관리 번호
@@ -24,11 +25,5 @@ public class Hospital {
     private int patientRoomCount;           // 입원실 수
     private int totalNumberOfBeds;          // 병상 수
     private float totalAreaSize;            // 총 면적
-
-
-
-
-
-
 
 }
