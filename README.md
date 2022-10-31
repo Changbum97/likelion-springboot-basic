@@ -33,7 +33,7 @@
   1. @RequestParam
   2. @PostMapping
   3. @RequestBody
-  4. @PutMapping
+  4. @PutMapping, @DeleteMapping
   5. ResponseEntity
 <br/><br/>
 ## Day3 (10/28 금)
@@ -55,10 +55,9 @@
   8. URL Mapping과 UserDao의 기능을 사용해 CRUD 구현
      - add, deleteAll, findById, findAll, getCount 기능
 <br/><br/>
-- 요약
-  1. @Slf4j
-  2. log.info
-  3. application.yml + 환경변수를 통한 DB connection 설정
-  4. @Getter, @Setter, @Data
-  5. @AllArgsConstructor
-  6. @Autowired
+- 정리
+  1. @Slf4j => log.info
+  2. application.yml + 환경변수를 통한 DB connection 설정
+  3. @Getter, @Setter, @Data
+  4. @AllArgsConstructor
+  5. @Autowired
