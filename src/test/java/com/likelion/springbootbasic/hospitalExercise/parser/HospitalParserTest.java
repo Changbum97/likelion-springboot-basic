@@ -25,18 +25,19 @@ import static org.junit.jupiter.api.Assertions.*;
 class HospitalParserTest {
 
     /*  Factory 사용
-    ReadLineContext<Hospital> hospitalReadLineContext;
+        ReadLineContext<Hospital> hospitalReadLineContext;
 
-    @Autowired
-    ApplicationContext context;
+        @Autowired
+        ApplicationContext context;
 
-    @BeforeEach
-    void setUp() {
-        this.hospitalReadLineContext = context.getBean("hospitalReadLineContext", ReadLineContext.class);
-    } */
+        @BeforeEach
+        void setUp() {
+            this.hospitalReadLineContext = context.getBean("hospitalReadLineContext", ReadLineContext.class);
+        }
+    */
 
     /*  Factory 미사용
-    ReadLineContext<Hospital> hospitalReadLineContext = new ReadLineContext<Hospital>(new HospitalParser());
+        ReadLineContext<Hospital> hospitalReadLineContext = new ReadLineContext<Hospital>(new HospitalParser());
      */
 
     @Autowired
