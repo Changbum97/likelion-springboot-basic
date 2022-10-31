@@ -4,10 +4,12 @@ import com.likelion.springbootbasic.hospitalExercise.domain.Hospital;
 import com.likelion.springbootbasic.hospitalExercise.domain.dao.HospitalDao;
 import com.zaxxer.hikari.util.DriverDataSource;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
@@ -20,7 +22,17 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class HospitalParserTest {
 
+    /*
     @Autowired
+    ApplicationContext context;
+
+    @BeforeEach
+    void setUp() {
+        this.hospitalReadLineContext = context.getBean("hospitalReadLineContext", ReadLineContext.class);
+    }
+    */
+
+    @Autowired  // 위에 주석친 코드 대신 이 어노테이션 쓰면 되는데, 이유까지는 잘 모르겠음
     ReadLineContext<Hospital> hospitalReadLineContext;
 
     @Test
