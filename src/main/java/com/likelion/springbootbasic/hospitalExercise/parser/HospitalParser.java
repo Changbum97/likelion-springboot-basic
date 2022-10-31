@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 public class HospitalParser implements Parser<Hospital>{
     @Override
     public Hospital parse(String str) {
-        //str = str.replace("\",\"", "");
         String[] row = str.split("\",\"");
 
         Hospital hospital = new Hospital();
