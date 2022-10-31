@@ -29,7 +29,7 @@
   - application.yml 수정
   - http://localhost:8080/swagger-ui/
 <br/><br/>
-- 요약
+- 정리
   1. @RequestParam
   2. @PostMapping
   3. @RequestBody
@@ -61,3 +61,17 @@
   3. @Getter, @Setter, @Data
   4. @AllArgsConstructor
   5. @Autowired
+<br/><br/>
+## Day4 (10/31 월)
+- 전국 병의원 빅데이터를 활용한 미니 프로젝트
+  1. 전국 병의원 정보를 담고있는 CSV 파일 다운
+  2. 필요한 데이터 선택 및 테이블 설계 => MySQL에 Table(nation_wide_hospitals) 생성
+  3. Hospital 객체 생성
+  4. 전에 작성했던 Parser(interface), ReadLineContext를 가져와 HospitalParser 제작
+  5. HospitalParser Test 진행
+  6. ReadLineContext에 HostpitalParser을 조립해주는 ParserFactory 생성
+  7. ParserFactory로 조립한 hospitalReadLineContext로 파일을 제대로 읽어오는지 Test 진행
+<br/><br/>
+- 정리
+  1. @NoArgsConstructor
+  2. @SpringBootTest, @Autowired
