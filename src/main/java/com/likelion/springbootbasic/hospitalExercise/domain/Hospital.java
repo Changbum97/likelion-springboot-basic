@@ -2,11 +2,14 @@ package com.likelion.springbootbasic.hospitalExercise.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Getter
-@AllArgsConstructor
+@Setter
+@NoArgsConstructor
 public class Hospital {
 
     private int id;                         // 번호(PK)
