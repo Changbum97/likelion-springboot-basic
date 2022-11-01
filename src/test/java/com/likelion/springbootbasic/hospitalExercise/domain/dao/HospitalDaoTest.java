@@ -25,7 +25,7 @@ class HospitalDaoTest {
     HospitalDao hospitalDao;
 
     @Test
-    @DisplayName("CSV 첫 줄을 DB에 삽입, getCount, deleteAll Test")
+    @DisplayName("CSV 첫 줄을 DB에 삽입, getCount, deleteAll, findById Test")
     void test() throws IOException {
         List<Hospital> hospitalList = hospitalReadLineContext.readByLine("./hospital_data.csv");
         Hospital hospital1 = hospitalList.get(0);
