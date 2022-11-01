@@ -9,6 +9,7 @@ import java.util.Arrays;
 public class HospitalParser implements Parser<Hospital>{
     @Override
     public Hospital parse(String str) {
+        // 인코딩 문제 해결하니 null값에 ""가 없어서 따로 처리
         while(str.contains("\",,")) {
             str = str.replace("\",,", "\",\"\",");
         }

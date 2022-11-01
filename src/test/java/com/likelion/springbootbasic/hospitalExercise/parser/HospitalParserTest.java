@@ -1,20 +1,11 @@
 package com.likelion.springbootbasic.hospitalExercise.parser;
 
 import com.likelion.springbootbasic.hospitalExercise.domain.Hospital;
-import com.likelion.springbootbasic.hospitalExercise.domain.dao.HospitalDao;
-import com.likelion.springbootbasic.hospitalExercise.parser.HospitalParser;
-import com.likelion.springbootbasic.hospitalExercise.parser.ReadLineContext;
-import com.zaxxer.hikari.util.DriverDataSource;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.ApplicationContext;
-import org.springframework.jdbc.core.JdbcTemplate;
 
-import javax.sql.DataSource;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
