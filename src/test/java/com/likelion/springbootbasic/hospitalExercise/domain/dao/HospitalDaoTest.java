@@ -25,14 +25,16 @@ class HospitalDaoTest {
 
 
     @Test
-    @DisplayName("CSV 첫 줄을 DB에 삽입 후 개수가 1개인지 Test")
-    void addTest() throws IOException {
+    @DisplayName("CSV 첫 줄을 DB에 삽입, getCount, deleteAll Test")
+    void test() throws IOException {
         List<Hospital> hospitalList = hospitalReadLineContext.readByLine("./hospital_data.csv");
         Hospital hospital1 = hospitalList.get(0);
         System.out.println(hospital1.getHospitalName());
 
         hospitalDao.add(hospital1);
+        assertEquals(1, hospitalDao.getCount());
 
-        Assertions.assertEquals(1, hospitalDao.getCount());
+        hospitalDao.deleteAll();
+        assertEquals(0, hospitalDao.getCount());
     }
 }
