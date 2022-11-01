@@ -37,6 +37,7 @@ class HospitalDaoTest {
         assertEquals("의원", findHospital.getOpenServiceName());
         assertEquals( LocalDateTime.of(1999, 6, 12, 0, 0, 0),
                 findHospital.getLicenseDate());
+        assertEquals(52.29f, findHospital.getTotalAreaSize());
 
         hospitalDao.deleteAll();
         assertEquals(0, hospitalDao.getCount());
