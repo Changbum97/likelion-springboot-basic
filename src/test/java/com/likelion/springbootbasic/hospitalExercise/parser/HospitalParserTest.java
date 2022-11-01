@@ -48,7 +48,7 @@ class HospitalParserTest {
     void oneHundreadThousandRows() throws IOException {
         List<Hospital> hospitalList = hospitalReadLineContext.readByLine("./hospital_data.csv");
         System.out.println("성공 개수 : " + hospitalList.size());
-        assertTrue(hospitalList.size() > 100000);
+        assertTrue(hospitalList.size() > 10000);
     }
 
     @Test

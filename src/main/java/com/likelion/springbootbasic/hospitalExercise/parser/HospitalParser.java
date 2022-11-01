@@ -4,10 +4,14 @@ import com.likelion.springbootbasic.hospitalExercise.domain.Hospital;
 import io.swagger.models.auth.In;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
 
 public class HospitalParser implements Parser<Hospital>{
     @Override
     public Hospital parse(String str) {
+        while(str.contains("\",,")) {
+            str = str.replace("\",,", "\",\"\",");
+        }
         String[] row = str.split("\",\"");
 
         Hospital hospital = new Hospital();
