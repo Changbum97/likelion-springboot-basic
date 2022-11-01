@@ -2,7 +2,12 @@ package com.likelion.springbootbasic.hospitalExercise.domain.dao;
 
 import com.likelion.springbootbasic.hospitalExercise.domain.Hospital;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
 
 @Component
 public class HospitalDao {
@@ -37,5 +42,26 @@ public class HospitalDao {
     public void deleteAll() {
         String sql = "DELETE FROM nation_wide_hospitals";
         this.jdbcTemplate.update(sql);
+    }
+
+    /*RowMapper<Hospital> rowMapper = new RowMapper<Hospital>() {
+        @Override
+        public Hospital mapRow(ResultSet rs, int rowNum) throws SQLException {
+            return null;
+        }
+    };*/
+
+    // RowMapper을 lambda로 생성
+    RowMapper<Hospital> rowMapper = (rs, rowNum) -> {
+        Hospital hospital = new Hospital();
+        hospital.setId(rs.getInt("id"));
+        hospital.setHospitalName(rs.getString("hospital_name"));
+        hospital.setOpenServiceName(rs.getString("open_service_name"));
+        hospital.setLicenseDate(rs.getTimestamp("license_date").toLocalDateTime());
+        return hospital;
+    };
+    public Hospital findById(int id) {
+        String sql = "SELECT * FROM nation_wide_hospitals WHERE id = ?";
+        return this.jdbcTemplate.queryForObject(sql, rowMapper, id);
     }
 }

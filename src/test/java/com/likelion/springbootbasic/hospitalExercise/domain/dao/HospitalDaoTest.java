@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -23,18 +24,22 @@ class HospitalDaoTest {
     @Autowired
     HospitalDao hospitalDao;
 
-
     @Test
     @DisplayName("CSV 첫 줄을 DB에 삽입, getCount, deleteAll Test")
     void test() throws IOException {
         List<Hospital> hospitalList = hospitalReadLineContext.readByLine("./hospital_data.csv");
         Hospital hospital1 = hospitalList.get(0);
-        System.out.println(hospital1.getHospitalName());
-
         hospitalDao.add(hospital1);
         assertEquals(1, hospitalDao.getCount());
+
+        Hospital findHospital = hospitalDao.findById(1);
+        assertEquals("효치과의원", findHospital.getHospitalName());
+        assertEquals("의원", findHospital.getOpenServiceName());
+        assertEquals( LocalDateTime.of(1999, 6, 12, 0, 0, 0),
+                findHospital.getLicenseDate());
 
         hospitalDao.deleteAll();
         assertEquals(0, hospitalDao.getCount());
     }
+
 }
