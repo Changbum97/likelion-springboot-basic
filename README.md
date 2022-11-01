@@ -40,20 +40,20 @@
 - Controller에 @Slf4j 어노테이션 추가
 - log.info를 통해 로그 출력 가능
 - 전에 작성했던 [UserDao](https://github.com/Changbum97/Toby-Spring3-Test/blob/master/src/main/java/UserExercise/dao/UserDao_Final.java)를 활용한 CRUD 기능 개발
-  1. JdbcTemplate을 활용해 DB와 연결했던 UserDao 불러오기
-  2. MySql 연결을 위한 라이브러리 추가
-     - spring-boot-starter-jdbc (2.7.5)
-     - mysql-connector-java (8.0.30)
-  3. application.yml을 통해 DB connection 설정
-     - 비밀번호는 환경변수를 통해 설정
-  4. User 객체 생성
-     - @Getter, @AllArgsConstructor 적용
-  5. Request Body를 통해 User을 받음
-     - UserRequestDao 생성
-  6. UserController 생성
-  7. @Autowired를 사용해 UserDao를 주입 받음
-  8. URL Mapping과 UserDao의 기능을 사용해 CRUD 구현
-     - add, deleteAll, findById, findAll, getCount 기능
+1. JdbcTemplate을 활용해 DB와 연결했던 UserDao 불러오기
+2. MySql 연결을 위한 라이브러리 추가
+   - spring-boot-starter-jdbc (2.7.5)
+   - mysql-connector-java (8.0.30)
+3. application.yml을 통해 DB connection 설정
+   - 비밀번호는 환경변수를 통해 설정
+4. User 객체 생성
+   - @Getter, @AllArgsConstructor 적용
+5. Request Body를 통해 User을 받음
+   - UserRequestDao 생성
+6. UserController 생성
+7. @Autowired를 사용해 UserDao를 주입 받음
+8. URL Mapping과 UserDao의 기능을 사용해 CRUD 구현
+   - add, deleteAll, findById, findAll, getCount 기능
 <br/><br/>
 - 정리
   1. @Slf4j => log.info
@@ -64,13 +64,13 @@
 <br/><br/>
 ## Day4 (10/31 월)
 - 전국 병의원 빅데이터를 활용한 미니 프로젝트
-  1. 전국 병의원 정보를 담고있는 CSV 파일 다운
-  2. 필요한 데이터 선택 및 테이블 설계 => MySQL에 Table(nation_wide_hospitals) 생성
-  3. Hospital 객체 생성
-  4. 전에 작성했던 Parser(interface), ReadLineContext를 가져와 HospitalParser 제작
-  5. HospitalParser Test 진행
-  6. ReadLineContext에 HostpitalParser을 조립해주는 ParserFactory 생성
-  7. ParserFactory로 조립한 hospitalReadLineContext로 파일을 제대로 읽어오는지 Test 진행
+1. 전국 병의원 정보를 담고있는 CSV 파일 다운
+2. 필요한 데이터 선택 및 테이블 설계 => MySQL에 Table(nation_wide_hospitals) 생성
+3. Hospital 객체 생성
+4. 전에 작성했던 Parser(interface), ReadLineContext를 가져와 HospitalParser 제작
+5. HospitalParser Test 진행
+6. ReadLineContext에 HostpitalParser을 조립해주는 ParserFactory 생성
+7. ParserFactory로 조립한 hospitalReadLineContext로 파일을 제대로 읽어오는지 Test 진행
 <br/><br/>
 - 정리
   1. @NoArgsConstructor
@@ -78,9 +78,9 @@
 <br/><br/>
 ## Day5 (11/01 화)
 - 전국 병의원 빅데이터를 활용한 미니 프로젝트
-  8. HospitalDao 생성
-  9. JdbcTemplate을 사용해서 Insert 기능 구현
-  10. getCount 기능 구현
-  11. deleteAll 기능 구현
-  12. findById 기능 구현
-  13. insert, getCount, deleteAll, findById 테스트 코드 구현
+8. HospitalDao 생성
+9. JdbcTemplate을 사용해서 Insert 기능 구현
+10. getCount 기능 구현
+11. deleteAll 기능 구현
+12. findById 기능 구현
+13. insert, getCount, deleteAll, findById 테스트 코드 구현
