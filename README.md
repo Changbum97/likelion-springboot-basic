@@ -83,3 +83,4 @@
   10. getCount 기능 구현
   11. deleteAll 기능 구현
   12. findById 기능 구현
+  13. insert, getCount, deleteAll, findById 테스트 코드 구현
