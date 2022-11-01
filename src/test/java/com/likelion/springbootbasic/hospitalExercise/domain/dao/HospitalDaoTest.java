@@ -2,6 +2,7 @@ package com.likelion.springbootbasic.hospitalExercise.domain.dao;
 
 import com.likelion.springbootbasic.hospitalExercise.domain.Hospital;
 import com.likelion.springbootbasic.hospitalExercise.parser.ReadLineContext;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +25,14 @@ class HospitalDaoTest {
 
 
     @Test
-    @DisplayName("CSV 첫 줄을 DB에 삽입하는 Test")
+    @DisplayName("CSV 첫 줄을 DB에 삽입 후 개수가 1개인지 Test")
     void addTest() throws IOException {
         List<Hospital> hospitalList = hospitalReadLineContext.readByLine("./hospital_data.csv");
         Hospital hospital1 = hospitalList.get(0);
         System.out.println(hospital1.getHospitalName());
 
         hospitalDao.add(hospital1);
+
+        Assertions.assertEquals(1, hospitalDao.getCount());
     }
 }
