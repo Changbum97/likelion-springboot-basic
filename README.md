@@ -77,7 +77,7 @@
   2. @SpringBootTest, @Autowired
 <br/><br/>
 ## Day5 (11/01 화)
-- 전국 병의원 빅데이터를 활용한 미니 프로젝트
+- 전국 병의원 빅데이터를 활용한 미니 프로젝트 이어서
 8. HospitalDao 생성
 9. JdbcTemplate을 사용해서 Insert 기능 구현
 10. getCount 기능 구현
