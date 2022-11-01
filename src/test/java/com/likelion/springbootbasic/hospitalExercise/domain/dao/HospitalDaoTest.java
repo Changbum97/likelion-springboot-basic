@@ -30,6 +30,7 @@ class HospitalDaoTest {
         List<Hospital> hospitalList = hospitalReadLineContext.readByLine("./hospital_data.csv");
         Hospital hospital1 = hospitalList.get(0);
         hospitalDao.add(hospital1);
+
         assertEquals(1, hospitalDao.getCount());
 
         Hospital findHospital = hospitalDao.findById(1);
