@@ -84,3 +84,14 @@
 11. deleteAll 기능 구현
 12. findById 기능 구현
 13. insert, getCount, deleteAll, findById 테스트 코드 구현
+<br/><br/>
+## Day6 (11/02 수)
+14. HospitalController 생성
+15. Hospital에 구현한 기능들을 URL Mapping
+16. HospitalDto를 활용해 필요한 정보만 추출, 변환 후 return
+17. HospitalService 생성
+18. CSV 파일 읽어와서 전체 데이터를 DB에 삽입하는 로직을 HospitalService로 분리
+<br/><br/>
+- 정리
+  1. @Service
+  2. Optional
