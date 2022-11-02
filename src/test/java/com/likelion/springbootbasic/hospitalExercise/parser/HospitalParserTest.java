@@ -37,13 +37,13 @@ class HospitalParserTest {
     @Autowired
     HospitalService hospitalService;
 
-    @Test
+    /*@Test
     @DisplayName("10만건 이상의 데이터가 파싱 되는지")
     void oneHundreadThousandRows() throws IOException {
         int cnt = hospitalService.insertLargeVolumeHospitalData("./hospital_data.csv");
         System.out.println("성공 개수 : " + cnt);
         assertTrue(cnt > 10000);
-    }
+    }*/
 
     @Test
     @DisplayName("CSV 1줄을 Hospital로 잘 만드는지 Test")
