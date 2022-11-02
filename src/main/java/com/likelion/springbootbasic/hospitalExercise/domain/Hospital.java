@@ -29,6 +29,7 @@ public class Hospital {
     private int totalNumberOfBeds;          // 병상 수
     private float totalAreaSize;            // 총 면적
 
+    /* toString Overriding
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -51,5 +52,5 @@ public class Hospital {
         sb.append("총 면적 : ").append(totalAreaSize).append("\n");
 
         return sb.toString();
-    }
+    } */
 }

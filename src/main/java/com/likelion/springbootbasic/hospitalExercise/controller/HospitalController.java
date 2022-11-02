@@ -4,6 +4,9 @@ import com.likelion.springbootbasic.hospitalExercise.domain.Hospital;
 import com.likelion.springbootbasic.hospitalExercise.domain.dao.HospitalDao;
 import com.likelion.springbootbasic.hospitalExercise.parser.ReadLineContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,24 +21,26 @@ public class HospitalController {
     @Autowired
     ReadLineContext<Hospital> hospitalReadLineContext;
 
-    @GetMapping({"", "/"})
-    public String hello() {
-        return "Hello";
-    }
-
     @GetMapping("/{id}")
-    public String findById(@PathVariable int id) {
+    public ResponseEntity<Object> findById(@PathVariable int id) {
         try {
             Hospital hospital = hospitalDao.findById(id);
 
-            if(hospital == null) {
-                return id + "번 아이디를 가진 병원이 없습니다";
-            }
-            return hospital.toString();
+            return ResponseEntity
+                    .status(HttpStatus.ACCEPTED)
+                    .body(hospital);
+
+        } catch (EmptyResultDataAccessException e) {
+            // 106271번 id 없음 => 404 에러 (Not Found)
+            return ResponseEntity
+                    .status(HttpStatus.NOT_FOUND)
+                    .body(id + "번 아이디를 가진 병원이 없습니다.");
 
         } catch (Exception e) {
             e.printStackTrace();
-            return "병원 조회 실패";
+            return ResponseEntity
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(null);
         }
     }
 
