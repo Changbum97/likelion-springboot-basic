@@ -2,6 +2,7 @@ package com.likelion.springbootbasic.hospitalExercise.controller;
 
 import com.likelion.springbootbasic.hospitalExercise.domain.Hospital;
 import com.likelion.springbootbasic.hospitalExercise.domain.dao.HospitalDao;
+import com.likelion.springbootbasic.hospitalExercise.domain.dto.HospitalDto;
 import com.likelion.springbootbasic.hospitalExercise.parser.ReadLineContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -21,14 +22,32 @@ public class HospitalController {
     @Autowired
     ReadLineContext<Hospital> hospitalReadLineContext;
 
+    public String convertBusinessStatusCode(int code) {
+        //13:영업중, 2:휴업, 3:폐업
+        if(code == 13) {
+            return "영업중";
+        } else if(code == 2) {
+            return "휴업";
+        } else if(code == 3) {
+            return "폐업";
+        } else {
+            return "기타";
+        }
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Object> findById(@PathVariable int id) {
         try {
             Hospital hospital = hospitalDao.findById(id);
 
+            HospitalDto hospitalDto = new HospitalDto(hospital.getHospitalName(),
+                    hospital.getFullAddress(), hospital.getRoadNameAddress(),
+                    hospital.getHealthcareProviderCount(), hospital.getTotalNumberOfBeds(),
+                    hospital.getTotalAreaSize(), convertBusinessStatusCode(hospital.getBusinessStatusCode()));
+
             return ResponseEntity
                     .status(HttpStatus.ACCEPTED)
-                    .body(hospital);
+                    .body(hospitalDto);
 
         } catch (EmptyResultDataAccessException e) {
             // 106271번 id 없음 => 404 에러 (Not Found)
