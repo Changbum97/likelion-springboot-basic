@@ -4,12 +4,10 @@ import com.likelion.springbootbasic.hospitalExercise.domain.Hospital;
 import com.likelion.springbootbasic.hospitalExercise.parser.HospitalParser;
 import com.likelion.springbootbasic.hospitalExercise.parser.ReadLineContext;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.io.IOException;
 import java.time.LocalDateTime;

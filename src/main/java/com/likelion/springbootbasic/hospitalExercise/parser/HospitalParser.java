@@ -1,10 +1,8 @@
 package com.likelion.springbootbasic.hospitalExercise.parser;
 
 import com.likelion.springbootbasic.hospitalExercise.domain.Hospital;
-import io.swagger.models.auth.In;
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
 
 public class HospitalParser implements Parser<Hospital>{
     @Override
