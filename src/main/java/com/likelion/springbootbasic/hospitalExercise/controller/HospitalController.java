@@ -23,6 +23,33 @@ public class HospitalController {
         return "Hello";
     }
 
+    @GetMapping("/{id}")
+    public String findById(@PathVariable int id) {
+        try {
+            Hospital hospital = hospitalDao.findById(id);
+
+            if(hospital == null) {
+                return id + "번 아이디를 가진 병원이 없습니다";
+            }
+            return hospital.toString();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "병원 조회 실패";
+        }
+    }
+
+    @GetMapping("/count")
+    public String getCount() {
+        try {
+            int count = hospitalDao.getCount();
+            return "전체 데이터 개수 : " + count;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "전체 개수 조회 실패";
+        }
+    }
+
     @PostMapping("/all")
     public String insertAll() {
         try {
