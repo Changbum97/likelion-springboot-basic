@@ -25,7 +25,7 @@ public class ReadLineContext<T> {
             try{
                 result.add(parser.parse(str));
             } catch (Exception e) {
-                System.out.println("파싱 중 문제가 생겨 이 라인은 넘어갑니다. 라인내용 : " + str);
+                // System.out.println("파싱 중 문제가 생겨 이 라인은 넘어갑니다. 라인내용 : " + str);
             }
         }
         br.close();
