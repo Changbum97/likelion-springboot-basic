@@ -4,13 +4,12 @@ import com.likelion.springbootbasic.hospitalExercise.domain.Hospital;
 import com.likelion.springbootbasic.hospitalExercise.domain.dao.HospitalDao;
 import com.likelion.springbootbasic.hospitalExercise.domain.dto.HospitalDto;
 import com.likelion.springbootbasic.hospitalExercise.parser.ReadLineContext;
+import com.likelion.springbootbasic.hospitalExercise.service.HospitalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/hospital")
@@ -18,6 +17,9 @@ public class HospitalController {
 
     @Autowired
     HospitalDao hospitalDao;
+
+    @Autowired
+    HospitalService hospitalService;
 
     @Autowired
     ReadLineContext<Hospital> hospitalReadLineContext;
@@ -77,12 +79,9 @@ public class HospitalController {
     @PostMapping("/all")
     public String insertAll() {
         try {
-            List<Hospital> hospitalList = hospitalReadLineContext.readByLine("./hospital_data.csv");
-            for(Hospital hospital : hospitalList) {
-                hospitalDao.add(hospital);
-            }
+            int cnt = hospitalService.insertLargeVolumeHospitalData("./hospital_data.csv");
 
-            return hospitalList.size() + "개 병원 데이터 삽입 성공";
+            return cnt + "개 병원 데이터 삽입 성공";
 
         } catch (Exception e) {
             e.printStackTrace();

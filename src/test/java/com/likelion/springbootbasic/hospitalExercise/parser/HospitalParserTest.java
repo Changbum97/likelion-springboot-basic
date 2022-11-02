@@ -1,6 +1,7 @@
 package com.likelion.springbootbasic.hospitalExercise.parser;
 
 import com.likelion.springbootbasic.hospitalExercise.domain.Hospital;
+import com.likelion.springbootbasic.hospitalExercise.service.HospitalService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -34,12 +34,15 @@ class HospitalParserTest {
     @Autowired
     ReadLineContext<Hospital> hospitalReadLineContext;
 
+    @Autowired
+    HospitalService hospitalService;
+
     @Test
     @DisplayName("10만건 이상의 데이터가 파싱 되는지")
     void oneHundreadThousandRows() throws IOException {
-        List<Hospital> hospitalList = hospitalReadLineContext.readByLine("./hospital_data.csv");
-        System.out.println("성공 개수 : " + hospitalList.size());
-        assertTrue(hospitalList.size() > 10000);
+        int cnt = hospitalService.insertLargeVolumeHospitalData("./hospital_data.csv");
+        System.out.println("성공 개수 : " + cnt);
+        assertTrue(cnt > 10000);
     }
 
     @Test
