@@ -4,6 +4,7 @@ import com.likelion.springbootbasic.hospitalExercise.domain.Hospital;
 import com.likelion.springbootbasic.hospitalExercise.domain.dao.HospitalDao;
 import com.likelion.springbootbasic.hospitalExercise.parser.ReadLineContext;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.util.List;
@@ -19,22 +20,27 @@ public class HospitalService {
         this.hospitalDao = hospitalDao;
     }
 
+    @Transactional
     public int insertLargeVolumeHospitalData(String filename) {
         int cnt = 0;
+        List<Hospital> hospitalList;
         try {
-            List<Hospital> hospitalList = hospitalReadLineContext.readByLine(filename);
-            for(Hospital hospital : hospitalList) {
-                try {
-                    hospitalDao.add(hospital);
-                    cnt ++;
-                } catch (Exception e) {
-                    System.out.printf("id : %d 레코드에 문제가 있습니다.", hospital.getId());
-                    throw new RuntimeException(e);
-                }
-            }
+            hospitalList = hospitalReadLineContext.readByLine(filename);
+            hospitalList.stream()
+                    .forEach(hospital -> {
+                        try {
+                            hospitalDao.add(hospital);
+                        } catch (Exception e) {
+                            System.out.printf("id : %d 레코드에 문제가 있습니다.\n", hospital.getId());
+                            throw new RuntimeException(e);
+                        }
+                    });
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return cnt;
+        if(hospitalList == null) {
+            return 0;
+        }
+        return hospitalList.size();
     }
 }

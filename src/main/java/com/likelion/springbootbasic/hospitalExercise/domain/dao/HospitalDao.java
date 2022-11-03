@@ -15,7 +15,7 @@ public class HospitalDao {
     }
 
     public void add(Hospital hospital) {
-        String sql = "INSERT INTO nation_wide_hospitals(id, open_service_name, open_local_government_code," +
+        String sql = "INSERT INTO `likelion-db`.`nation_wide_hospitals`(id, open_service_name, open_local_government_code," +
                 "management_number, license_date, business_status, business_status_code, phone," +
                 "full_address, road_name_address, hospital_name, business_type_name," +
                 "healthcare_provider_count, patient_room_count, total_number_of_beds, total_area_size)" +
@@ -72,5 +72,11 @@ public class HospitalDao {
     public Hospital findById(int id) {
         String sql = "SELECT * FROM nation_wide_hospitals WHERE id = ?";
         return this.jdbcTemplate.queryForObject(sql, rowMapper, id);
+    }
+
+    // id 최대값 return
+    public int getMaxId() {
+        String sql = "SELECT MAX(id) FROM nation_wide_hospitals;";
+        return this.jdbcTemplate.queryForObject(sql, Integer.class);
     }
 }

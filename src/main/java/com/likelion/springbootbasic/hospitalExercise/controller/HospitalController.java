@@ -89,6 +89,25 @@ public class HospitalController {
         }
     }
 
+    // Hospital 1개만 따로 입력받아 추가
+    @PostMapping("/")
+    public String insert(@RequestBody Hospital hospital) {
+        try {
+            // id는 사용자가 모르기 때문에 직접 생성해서 넣어줌
+            int id = hospitalDao.getMaxId() + 1;
+            hospital.setId(id);
+            hospitalDao.add(hospital);
+
+            return id + "번 Hospital 추가 완료";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Hospital 추가 실패";
+        }
+    }
+    // { "businessStatus": 1,, "businessStatusCode": 13, "businessTypeName": "치과의원", "fullAddress": "주소1", "healthcareProviderCount": 10, "hospitalName": "치과1", "managementNumber": "mm1", "openLocalGovernmentCode": 3620000, "openServiceName": "의원", "patientRoomCount": 1, "phone": "010-1111-1111", "roadNameAddress": "도로명주소1", "totalAreaSize": 10.1, "totalNumberOfBeds": 5 }
+    // { "businessStatus": 1,, "businessStatusCode": 13, "businessTypeName": "치과의원", "fullAddress": "주소2", "healthcareProviderCount": 7, "hospitalName": "치과2", "managementNumber": "mm2", "openLocalGovernmentCode": 3620000, "openServiceName": "의원", "patientRoomCount": 2, "phone": "010-2222-2222", "roadNameAddress": "도로명주소2", "totalAreaSize": 74.0, "totalNumberOfBeds": 1 }
+    // { "businessStatus": 1,, "businessStatusCode": 13, "businessTypeName": "치과의원", "fullAddress": "주소2", "healthcareProviderCount": 3, "hospitalName": "치과3", "managementNumber": "mm3", "openLocalGovernmentCode": 3620000, "openServiceName": "의원", "patientRoomCount": 0, "phone": "010-3333-3333", "roadNameAddress": "도로명주소3", "totalAreaSize": 8.8, "totalNumberOfBeds": 0 }
+
     @DeleteMapping("/all")
     public String deleteAll() {
         try {
