@@ -23,24 +23,20 @@ public class HospitalService {
     @Transactional
     public int insertLargeVolumeHospitalData(String filename) {
         int cnt = 0;
-        List<Hospital> hospitalList;
         try {
-            hospitalList = hospitalReadLineContext.readByLine(filename);
-            hospitalList.stream()
-                    .forEach(hospital -> {
-                        try {
-                            hospitalDao.add(hospital);
-                        } catch (Exception e) {
-                            System.out.printf("id : %d 레코드에 문제가 있습니다.\n", hospital.getId());
-                            throw new RuntimeException(e);
-                        }
-                    });
+            List<Hospital> hospitalList = hospitalReadLineContext.readByLine(filename);
+            for(Hospital hospital : hospitalList) {
+                try {
+                    hospitalDao.add(hospital);
+                    cnt ++;
+                } catch (Exception e) {
+                    System.out.printf("id : %d 레코드에 문제가 있습니다.", hospital.getId());
+                    throw new RuntimeException(e);
+                }
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        if(hospitalList == null) {
-            return 0;
-        }
-        return hospitalList.size();
+        return cnt;
     }
 }
