@@ -27,6 +27,7 @@ public class HospitalService {
         try {
             hospitalList = hospitalReadLineContext.readByLine(filename);
             System.out.println("파싱이 끝났습니다.");
+            // 병렬 처리로 삽입 속도 증가
             hospitalList.stream()
                     .parallel()
                     .forEach(hospital -> {
