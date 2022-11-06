@@ -86,6 +86,7 @@
 13. insert, getCount, deleteAll, findById 테스트 코드 구현
 <br/><br/>
 ## Day6 (11/02 수)
+- 전국 병의원 빅데이터를 활용한 미니 프로젝트 이어서
 14. HospitalController 생성
 15. Hospital에 구현한 기능들을 URL Mapping
 16. HospitalDto를 활용해 필요한 정보만 추출, 변환 후 return
@@ -95,3 +96,7 @@
 - 정리
   1. @Service
   2. Optional
+<br/><br/>
+## Day7 (11/03 목)
+- 전국 병의원 빅데이터를 활용한 미니 프로젝트 이어서
+19. HospitalService로 분리한 전체 데이터 삽입 작업을 병렬 처리로 진행함으로써 삽입 속도 증가 
